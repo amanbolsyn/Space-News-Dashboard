@@ -1,28 +1,46 @@
 body {
-    height: 100vh;  
+    height: 100vh;
+    background-color: black;
+    background-image: url(../assets/images/moon.jpeg);
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 400px;
+
 }
 
 /*Grid layout styles*/
-.container{
-   display:grid;
-   grid-template-areas: 
-   'header header'
-   'nav nav '
-   'aside main'
-   'aside footer ';
-   grid-template-columns: 1fr 8fr;
-   grid-template-rows: 1fr 1fr 10fr 1fr;
-   grid-gap: 10px;
-   background-color:aqua ;
+.container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'nav nav '
+        'aside main'
+        'aside footer ';
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 1fr 1fr 10fr 2fr;
+    grid-gap: 30px;
+    padding: 30px;
+    margin: 0px;
+
 }
 
 /*individual class styles for each semantic element*/
 .header {
     grid-area: header;
+    text-align: center;
 }
 
 .nav {
     grid-area: nav;
+    text-align: center;
+}
+
+#searchInput{
+    
+}
+
+#serchBttn {
+
 }
 
 .aside {
@@ -34,13 +52,18 @@ body {
 }
 
 .footer {
-    grid-area: footer; 
+    grid-area: footer;
 }
+
 
 /*selecter for all semantic elements inside container class*/
-.container>header, nav, aside, main, footer {
-    background-color: blueviolet;
+.container>header,
+nav,
+aside,
+main,
+footer {
+    color: white;
+    opacity: 0.6;
 }
 
-
-
+.card {}
