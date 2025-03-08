@@ -1,0 +1,46 @@
+body {
+    height: 100vh;  
+}
+
+/*Grid layout styles*/
+.container{
+   display:grid;
+   grid-template-areas: 
+   'header header'
+   'nav nav '
+   'aside main'
+   'aside footer ';
+   grid-template-columns: 1fr 8fr;
+   grid-template-rows: 1fr 1fr 10fr 1fr;
+   grid-gap: 10px;
+   background-color:aqua ;
+}
+
+/*individual class styles for each semantic element*/
+.header {
+    grid-area: header;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.aside {
+    grid-area: aside;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer; 
+}
+
+/*selecter for all semantic elements inside container class*/
+.container>header, nav, aside, main, footer {
+    background-color: blueviolet;
+}
+
+
+
