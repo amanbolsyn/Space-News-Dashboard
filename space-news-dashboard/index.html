@@ -2,43 +2,90 @@
 <html lang="en">
 
 <head>
+    <!-- importing font style from google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-    
+
+    <link rel="icon" href="./assets/images/galaxy.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- styles -->
     <link rel="stylesheet" href="./css/styles.css">
     <title>Space News Dashboard</title>
 </head>
 
-<body class = "container">
-    <header class = "header">
+
+<body class="page-container">
+    <!-- header section -->
+    <header class="header">
         <h1>Space News Dashboard</h1>
     </header>
-    <nav class = "nav">
+    <!-- navigation section -->
+    <nav class="nav">
         <form>
-        <input type = text placeholder="search" id="search-input" name="search">
-        <button id="search-button">Search</button>
+            <input type=text placeholder="search articles..." id="search-input" name="search">
+            <button id="search-button">Search</button>
         </form>
     </nav>
-    <aside class = "aside">
-        
+    <!-- side sexction with sorting and filtering -->
+    <aside class="aside">
+        <!-- sorting -->
+        <h3>Sorting</h3>
+        <!-- by title -->
+        <form>
+            <label for="titles">By titile</label><br>
+            <select name="titles" id="title-sort">
+                <option value = "">Choose an option</option>
+                <option value="A to Z">A to Z</option>
+                <option value="Z to A">Z to A</option>
+            </select><br>
+        </form>
+
+        <!-- by date -->
+        <form>
+        <label for="dates">By date</label><br>
+        <select name="dates" id="date-sort">
+            <option value = "">Choose an option</option>
+            <option value="newest">newest</option>
+            <option value="oldest">oldests</option>
+        </select><br>
+        </form>
+
+        <!-- filtering -->
+        <h3>Filtering</h3>
+        <!-- by source-->
+        <form>
+        <label id="sources">By source</label><br>
+        <select name="sources" id="source-sort">
+            <option value = "">Choose an option</option>
+            <option value="">1 source</option>
+            <option value="">2 source</option>
+            <option value="">3 source</option>
+        </select><br>
+        </form>
+
     </aside>
-    <main class = "main">
-       <div class = "card"> 
-        <h3>title</h3>
-        <img>
-        <p>Brief Description</p>
-        <p>Publication date</p>
-        <p>Author</p>
-       </div>
+    <!-- article section -->
+    <main class="main">
+        <div class="card-container">
+            <article>Article 1</article>
+            <article>Article 2</article>
+            <article>Article 3</article>
+            <article>Article 4</article>
+            <article>Article 5</article>
+            <article>Article 6</article>
+        </div>
     </main>
-    <footer class = "footer">
-       <p>Copyright &#169; 2025 Aman Nurgozhiyev</p>
+    <!-- footer section -->
+    <footer class="footer">
+        <p>Copyright &#169; 2025 Aman Nurgozhiyev</p>
     </footer>
 </body>
 
+<!-- scripts -->
 <script type="module" href=""></script>
 
 </html>

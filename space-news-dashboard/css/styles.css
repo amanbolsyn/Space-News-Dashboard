@@ -7,8 +7,8 @@ body {
 
 }
 
-/*Grid layout styles*/
-.container {
+/*Page grid layout styles*/
+.page-container {
     display: grid;
     grid-template-areas:
         'header header'
@@ -32,14 +32,16 @@ body {
 header>h1{
     font-family: "Honk", system-ui;
     font-size:60px;
-    margin:auto;
     margin:20px;
     
 }
 
+header>h1:hover {
+   font-size: 65px;
+}
+
 .nav {
     grid-area: nav;
-    text-align: center;
 }
 
 nav>form {
@@ -57,9 +59,16 @@ nav>form {
    font-size: 16px;
    padding: 7px;
    width: 400px;
-   border:none;
-   
+   border:none;   
+   outline:none;
 }
+
+
+#search-input:hover{
+   margin:8px;
+}
+
+
 
 #search-button {
  border: none;
@@ -69,10 +78,52 @@ nav>form {
  border-radius: 5px;
  width: 100px;
  background-color: rgb(219, 219, 219);
+ cursor: pointer;
+ 
+}
+
+
+#search-button:hover {
+    color: rgb(219, 219, 219);
+    background-color:rgb(89, 146, 146);
 }
 
 .aside {
     grid-area: aside;
+}
+
+aside>h3 {
+    text-align: center;
+    font-family: Honk;
+    font-size: 40px;
+}
+
+.aside>h3:hover {
+    font-size: 45px;
+}
+
+.aside>form {
+    background-color: white;
+    color:black;
+    margin:10px;
+    border-radius: 7px;
+    padding:10px;
+    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 100px 4px;
+}
+
+.aside>form>label {
+    font-size: 25px;
+    font-family: Honk;
+}
+
+.aside>form>select{
+    width: 100%;
+    font-size:16px;
+    cursor: pointer;
+}
+
+.aside>form:hover{
+    padding: 13px;
 }
 
 .main {
@@ -85,9 +136,17 @@ nav>form {
     font-size: 20px;
 }
 
+/*footer links(future)*/
+/* .footer-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    padding: 30px;
+} */
+
 
 /*selecter for all semantic elements inside container class*/
-.container>header,
+.page-container>header,
 nav,
 aside,
 main,
@@ -95,6 +154,18 @@ footer {
     color: white;
 }
 
-.card {
+
+/*Card grid layout styles*/
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    padding: 30px;
+}
+
+
+/*Card container*/
+.card-container>article {
+
 
 }
