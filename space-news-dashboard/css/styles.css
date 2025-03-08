@@ -130,6 +130,15 @@ aside>h3 {
     grid-area: main;
 }
 
+.main>h2{
+    font-family: 'Honk';
+    font-size: 45px;
+}
+
+.main>h2:hover {
+    font-size:50px;
+}
+
 .footer {
     grid-area: footer;
     text-align: center;
