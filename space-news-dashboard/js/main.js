@@ -10,6 +10,7 @@ const firstPageBttn = document.getElementById("first-pagination")
 const lastPageBttn = document.getElementById("last-pagination")
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   // Your JavaScript code here
 
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       forwardPageBttn.addEventListener("click", () => {
 
-        if (currentPage <= totalPages) {
+        if (currentPage !== totalPages) {
           currentPage++
           UpdatePages(currentPage, data)
         }
