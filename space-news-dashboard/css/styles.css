@@ -1,10 +1,12 @@
+ 
 body {
     height: 100vh;
     background-color: black;
     background-image: url(../assets/images/stars.jpg);
     background-repeat: repeat;
     background-size: 400px;
-
+    /* width:150vh;
+    max-width: fit-content; */
 }
 
 /*Page grid layout styles*/
@@ -93,19 +95,24 @@ nav>form {
     grid-area: aside;
 }
 
-aside>h3 {
+.aside>div{
+    position: sticky;
+    top: 0;
+}
+
+aside>div>h3 {
     font-family: Honk;
     font-size: 40px;
-    display: table;
+
     margin:auto;
     padding:20px;
 }
 
-.aside>h3:hover {
+.aside>div>h3:hover {
     font-size: 45px;
 }
 
-.aside>form {
+.aside>div>form {
     background-color: white;
     color:black;
     margin:10px;
@@ -114,21 +121,33 @@ aside>h3 {
     box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 100px 4px;
 }
 
-.aside>form>label {
+.aside>div>form>label {
     font-size: 25px;
     font-family: Honk;
     
 }
 
-.aside>form>select{
+.aside>div>form>select{
     width: 100%;
     font-size:16px;
     cursor: pointer;
 }
 
-.aside>form:hover{
+.aside>div>form:hover{
     padding: 13px;
 }
+
+/*for future*/
+/* #reset-button {
+    border: none;
+    font-size: 16px;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgb(219, 219, 219);
+    cursor: pointer;
+    margin:10px;
+    box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 100px 4px;
+} */
 
 .main {
     grid-area: main;
@@ -137,6 +156,7 @@ aside>h3 {
 .main>h2{
     font-family: 'Honk';
     font-size: 45px;
+    margin-top: 20px;
     display: table;
 }
 
@@ -175,11 +195,37 @@ footer {
     grid-template-columns: auto auto auto;
     grid-gap: 30px;
     padding: 30px;
+
 }
 
 
 /*Card container*/
 .card-container>article {
-   background-color: blue;
+    background-color: white;
+    padding:20px;
+    border-radius: 7px;
+    color: black;
+}
 
+
+.card-container>article>h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.card-container>article>img {
+ width: 100%;
+ height: 250px;
+ object-fit: contain;
+}
+
+.card-container>article>p {
+     
+}
+
+.card-container>article>a {
+   
+}
+.card-container>article:hover {
+   cursor: pointer;
 }

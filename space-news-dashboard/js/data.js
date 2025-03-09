@@ -13,7 +13,7 @@ async function fetchJSONData() {
     .then((data) => {return data})
     .catch(error => {
         console.error('Failed to fetch data:', error);
-        return null;  // Return null if there’s an error
+        return null;  // Return null if there’s an errore
     });
 }
 
