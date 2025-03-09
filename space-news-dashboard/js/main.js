@@ -1,14 +1,17 @@
 //main entry point to my application 
 import { fetchJSONData } from "./data.js";
-import { CreateCard, ArticlesPerPage } from "./utils.js";
+import { CreateCard, ArticlesPerPage, UpdatePages } from "./utils.js";
 
 let currentPage = 1;
 
+const forwardPageBttn = document.getElementById("forward-pagination")
+const backPageBttn = document.getElementById("back-pagination")
+const firstPageBttn = document.getElementById("first-pagination")
+const lastPageBttn = document.getElementById("last-pagination")
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // Your JavaScript code here
-
-  const forwardBttn = document.getElementById("forward-pagination")
-  const backBttn = document.getElementById("back-pagination")
 
   fetchJSONData().then((data) => {
     if (data) { //working with objects 
@@ -28,51 +31,40 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
 
-      forwardBttn.addEventListener("click", () => {
+      forwardPageBttn.addEventListener("click", () => {
 
         if (currentPage <= totalPages) {
-          const currentArticles = document.querySelector(".card-container");
-          currentArticles.innerHTML = ""
-
-
           currentPage++
-
-          //articles that has to be shown on the current page
-          let articles = ArticlesPerPage(currentPage, data);
-
-
-          //article card loading 
-          for (let i = 0; i < articles.length; i++) {
-            CreateCard(articles[i])
-          }
-
-          scrollTo(0, 0)
+          UpdatePages(currentPage, data)
         }
       })
 
-      backBttn.addEventListener("click", () => {
+
+
+      backPageBttn.addEventListener("click", () => {
         if (currentPage !== 1) {
-          const currentArticles = document.querySelector(".card-container");
-          currentArticles.innerHTML = ""
-
-
           currentPage--
-
-          //articles that has to be shown on the current page
-          let articles = ArticlesPerPage(currentPage, data);
-
-
-          //article card loading 
-          for (let i = 0; i < articles.length; i++) {
-            CreateCard(articles[i])
-          }
-
-          scrollTo(0, 0)
+          UpdatePages(currentPage, data)
         }
       })
 
 
+      firstPageBttn.addEventListener("click", () => {
+        if (currentPage !== 1) {
+          currentPage = 1
+          UpdatePages(currentPage, data)
 
+        }
+      })
+
+
+      lastPageBttn.addEventListener("click", () => {
+        if (currentPage !== totalPages) {
+          currentPage = totalPages
+          UpdatePages(currentPage, data)
+
+        }
+      })
 
 
 

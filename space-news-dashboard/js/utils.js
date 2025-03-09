@@ -17,10 +17,10 @@ function CreateCard(article) {
         const artcImg = document.createElement("img")
         artcImg.src = article.image_url;
 
-        const  artcSum = document.createElement("p")
+        const artcSum = document.createElement("p")
         artcSum.innerHTML = article.summary;
 
-        const artcSource= document.createElement("a")
+        const artcSource = document.createElement("a")
         artcSource.innerHTML = article.news_site
         artcSource.href = article.url;
         artcSource.id = "article-source"
@@ -28,10 +28,10 @@ function CreateCard(article) {
 
         const artcDate = document.createElement("a")
         const formattedDate = FormatDate(article.published_at);
-        artcDate.innerHTML =  formattedDate;
+        artcDate.innerHTML = formattedDate;
         artcDate.id = "article-date"
 
-        
+
         artcCard.appendChild(artcTitle);
         artcCard.appendChild(artcImg);
         artcCard.appendChild(artcSum);
@@ -43,36 +43,57 @@ function CreateCard(article) {
 
 
 //formatting data into appropriate styling 
-function FormatDate(currentDate){
+function FormatDate(currentDate) {
 
-     const date = new Date(currentDate);
-     const options = {
+    const date = new Date(currentDate);
+    const options = {
         year: '2-digit',
         month: 'short',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
-     }
+    }
 
-     const formattedDate = date.toLocaleString('en-GB', options)
+    const formattedDate = date.toLocaleString('en-GB', options)
 
-    return formattedDate; 
+    return formattedDate;
 }
 
 
-function ArticlesPerPage(pageNumber, articles){
-  
-     const startIndex = (pageNumber-1) * 30
-     const endIndex = startIndex + 30; 
-     let articlesPerPage = []
+function ArticlesPerPage(pageNumber, articles) {
 
-     
-    for(let i = startIndex; i<endIndex; i++){
+    const startIndex = (pageNumber - 1) * 30
+    const endIndex = startIndex + 30;
+    let articlesPerPage = []
+
+
+    for (let i = startIndex; i < endIndex; i++) {
         articlesPerPage.push(articles.results[i]);
     }
 
     return articlesPerPage
 
- }
+}
 
-export { CreateCard, ArticlesPerPage }
+function UpdatePages(currentPage, data) {
+
+    const currentArticles = document.querySelector(".card-container");
+    currentArticles.innerHTML = ""
+
+    //articles that has to be shown on the current page
+    let articles = ArticlesPerPage(currentPage, data);
+
+
+    //article card loading 
+    for (let i = 0; i < articles.length; i++) {
+        CreateCard(articles[i])
+    }
+
+    scrollTo(0, 0)
+
+}
+
+
+
+
+export { CreateCard, ArticlesPerPage, UpdatePages}
