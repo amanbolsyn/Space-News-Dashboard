@@ -1,12 +1,13 @@
 //functions that are reused accross application 
 
-//card creation
-function createCard(article) {
+//article card creation 
+function CreateCard(article) {
 
     if (article) {
 
         let cardContainer = document.querySelector(".card-container")
         const artcCard = document.createElement("article")
+        artcCard.id = article.id
 
         cardContainer.appendChild(artcCard)
 
@@ -36,10 +37,12 @@ function createCard(article) {
         artcCard.appendChild(artcSum);
         artcCard.appendChild(artcSource);
         artcCard.appendChild(artcDate);
+
     }
 }
 
 
+//formatting data into appropriate styling 
 function FormatDate(currentDate){
 
      const date = new Date(currentDate);
@@ -56,4 +59,20 @@ function FormatDate(currentDate){
     return formattedDate; 
 }
 
-export { createCard }
+
+function ArticlesPerPage(pageNumber, articles){
+  
+     const startIndex = (pageNumber-1) * 30
+     const endIndex = startIndex + 30; 
+     let articlesPerPage = []
+
+     
+    for(let i = startIndex; i<endIndex; i++){
+        articlesPerPage.push(articles.results[i]);
+    }
+
+    return articlesPerPage
+
+ }
+
+export { CreateCard, ArticlesPerPage }
