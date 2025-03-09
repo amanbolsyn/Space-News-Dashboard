@@ -61,7 +61,7 @@ nav>form {
    border-radius: 5px;
    font-size: 16px;
    padding: 7px;
-   width: 400px;
+   width: 500px;
    border:none;   
    outline:none;
 }
@@ -69,26 +69,6 @@ nav>form {
 
 #search-input:hover{
    margin:8px;
-}
-
-
-
-#search-button {
- border: none;
- margin:5px;
- font-size: 16px;
- padding: 7px;
- border-radius: 5px;
- width: 100px;
- background-color: rgb(219, 219, 219);
- cursor: pointer;
- 
-}
-
-
-#search-button:hover {
-    color: rgb(219, 219, 219);
-    background-color:rgb(89, 146, 146);
 }
 
 .aside {
@@ -197,7 +177,7 @@ footer {
 /*Card grid layout styles*/
 .card-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
     padding: 30px;
 
