@@ -180,6 +180,6 @@ footer {
 
 /*Card container*/
 .card-container>article {
-
+   background-color: blue;
 
 }
