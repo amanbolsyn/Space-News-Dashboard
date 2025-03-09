@@ -17,4 +17,25 @@ async function fetchJSONData() {
     });
 }
 
-export { fetchJSONData };
+
+function RetrieveArticles(data){
+
+   let articles = {results:[]};
+
+   let searchStr = "y";
+   //finding matched article titles by searching from search input
+   for(let i = 0; i<data.results.length; i++){
+       if(data.results[i].title.search(searchStr) !== -1){
+        articles.results.push(data.results[i])
+       }
+   }
+    
+   console.log(articles)
+   return articles
+}
+
+
+
+
+
+export { fetchJSONData, RetrieveArticles };

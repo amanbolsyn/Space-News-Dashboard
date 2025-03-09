@@ -1,13 +1,4 @@
 //functions that are reused accross application 
-
-
-
-function GetSouces(){
-
-};
-
-
-
 //article card creation 
 function CreateCard(article) {
 
@@ -45,9 +36,26 @@ function CreateCard(article) {
         artcCard.appendChild(artcSum);
         artcCard.appendChild(artcSource);
         artcCard.appendChild(artcDate);
-
-
+        
     }
+}
+
+function DisplayRetrivedArtc(retrivedArticles){
+
+    let currentPage = 1
+
+    const currentArticles = document.querySelector(".card-container");
+    currentArticles.innerHTML = ""
+
+      //articles that has to be shown on the current page
+      let articles = ArticlesPerPage(currentPage, retrivedArticles);
+
+      //article card loading 
+      for (let i = 0; i < articles.length; i++) {
+          CreateCard(articles[i])
+      }
+
+
 }
 
 
@@ -84,9 +92,6 @@ function ArticlesPerPage(pageNumber, articles) {
 
 }
 
-
-
-
 function UpdatePages(currentPage, data) {
 
     const currentArticles = document.querySelector(".card-container");
@@ -105,7 +110,4 @@ function UpdatePages(currentPage, data) {
 
 }
 
-
-
-
-export { CreateCard, ArticlesPerPage, UpdatePages}
+export { CreateCard, ArticlesPerPage, UpdatePages, DisplayRetrivedArtc}
