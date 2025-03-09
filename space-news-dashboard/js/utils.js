@@ -22,9 +22,13 @@ function createCard(article) {
         const artcSource= document.createElement("a")
         artcSource.innerHTML = article.news_site
         artcSource.href = article.url;
+        artcSource.id = "article-source"
+
 
         const artcDate = document.createElement("a")
-        artcDate.innerHTML = article.published_at;
+        const formattedDate = FormatDate(article.published_at);
+        artcDate.innerHTML =  formattedDate;
+        artcDate.id = "article-date"
 
         
         artcCard.appendChild(artcTitle);
@@ -32,9 +36,24 @@ function createCard(article) {
         artcCard.appendChild(artcSum);
         artcCard.appendChild(artcSource);
         artcCard.appendChild(artcDate);
-
-
     }
+}
+
+
+function FormatDate(currentDate){
+
+     const date = new Date(currentDate);
+     const options = {
+        year: '2-digit',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+     }
+
+     const formattedDate = date.toLocaleString('en-GB', options)
+
+    return formattedDate; 
 }
 
 export { createCard }

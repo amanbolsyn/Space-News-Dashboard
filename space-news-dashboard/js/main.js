@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
    fetchJSONData().then((data) => {
        if (data) { //working with objects 
          
-         for(let i=0; i<100; i++){
+         for(let i=0; i<30; i++){
             createCard(data.results[i])
          }
      
