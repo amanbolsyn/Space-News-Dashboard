@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (currentPage !== totalPages) {
                     currentPage++
-                    if (retrivedArticles !== undefined) {
+                    if (retrivedArticles === undefined) {
                         UpdatePages(currentPage, data)
                     } else {
                         UpdatePages(currentPage, retrivedArticles)
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             backPageBttn.addEventListener("click", () => {
                 if (currentPage !== 1) {
                     currentPage--
-                    if (retrivedArticles !== undefined) {
+                    if (retrivedArticles === undefined) {
                         UpdatePages(currentPage, data)
                     } else {
                         UpdatePages(currentPage, retrivedArticles)
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             firstPageBttn.addEventListener("click", () => {
                 if (currentPage !== 1) {
                     currentPage = 1
-                    if (retrivedArticles !== undefined) {
+                    if (retrivedArticles === undefined) {
                         UpdatePages(currentPage, data)
                     } else {
                         UpdatePages(currentPage, retrivedArticles)
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lastPageBttn.addEventListener("click", () => {
                 if (currentPage !== totalPages) {
                     currentPage = totalPages
-                    if (retrivedArticles !== undefined) {
+                    if (retrivedArticles === undefined) {
                         UpdatePages(currentPage, data)
                     } else {
                         UpdatePages(currentPage, retrivedArticles)
