@@ -1,5 +1,13 @@
 //functions that are reused accross application 
 
+
+
+function GetSouces(){
+
+};
+
+
+
 //article card creation 
 function CreateCard(article) {
 

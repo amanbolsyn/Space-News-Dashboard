@@ -10,6 +10,9 @@ const firstPageBttn = document.getElementById("first-pagination")
 const lastPageBttn = document.getElementById("last-pagination")
 const resetSortBttn = document.getElementById("reset-button")
 
+const titleSortMenu = document.getElementById("title-sort").value;
+const dateSortmenu  = document.getElementById("date-sort").value;
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -17,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchJSONData().then((data) => {
     if (data) { //working with objects 
+
+        //sorting and filtering manipulatons 
+
+
+
+
+
+
+
+
+
 
 
       //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
