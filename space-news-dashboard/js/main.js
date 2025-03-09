@@ -8,6 +8,7 @@ const forwardPageBttn = document.getElementById("forward-pagination")
 const backPageBttn = document.getElementById("back-pagination")
 const firstPageBttn = document.getElementById("first-pagination")
 const lastPageBttn = document.getElementById("last-pagination")
+const resetSortBttn = document.getElementById("reset-button")
 
 
 
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
   fetchJSONData().then((data) => {
     if (data) { //working with objects 
 
-      //pagination 
 
       //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
       const totalPages = Math.ceil(data.results.length / 30);
@@ -80,3 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+//reset sorting and filter dropdowns
+resetSortBttn.addEventListener("click", () => {
+ 
+
+})

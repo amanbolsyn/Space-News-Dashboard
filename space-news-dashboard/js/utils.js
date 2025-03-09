@@ -38,6 +38,7 @@ function CreateCard(article) {
         artcCard.appendChild(artcSource);
         artcCard.appendChild(artcDate);
 
+
     }
 }
 
@@ -62,7 +63,7 @@ function FormatDate(currentDate) {
 
 function ArticlesPerPage(pageNumber, articles) {
 
-    const startIndex = (pageNumber - 1) * 30
+    const startIndex = (pageNumber - 1) * 30;
     const endIndex = startIndex + 30;
     let articlesPerPage = []
 
@@ -74,6 +75,9 @@ function ArticlesPerPage(pageNumber, articles) {
     return articlesPerPage
 
 }
+
+
+
 
 function UpdatePages(currentPage, data) {
 

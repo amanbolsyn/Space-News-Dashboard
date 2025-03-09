@@ -96,6 +96,7 @@ nav>form {
 }
 
 .aside>div{
+    text-align: center;
     position: sticky;
     top: 0;
 }
@@ -138,16 +139,21 @@ aside>div>h3 {
 }
 
 /*for future*/
-/* #reset-button {
+#reset-button {
     border: none;
     font-size: 16px;
     padding: 7px;
     border-radius: 5px;
     background-color: rgb(219, 219, 219);
     cursor: pointer;
-    margin:10px;
     box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 100px 4px;
-} */
+    width: 96%;
+}
+
+#reset-button:hover{
+    color: rgb(219, 219, 219);
+    background-color:rgb(89, 146, 146);
+}
 
 .main {
     grid-area: main;
