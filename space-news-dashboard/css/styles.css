@@ -5,8 +5,8 @@ body {
     background-image: url(../assets/images/stars.jpg);
     background-repeat: repeat;
     background-size: 400px;
-    /* width:150vh;
-    max-width: fit-content; */
+    /* width:150vh; */
+    /*max-width: fit-content; */
 }
 
 /*Page grid layout styles*/

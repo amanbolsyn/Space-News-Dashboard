@@ -54,16 +54,49 @@ document.addEventListener('DOMContentLoaded', function () {
             titleSortMenu.addEventListener("input", () => {
                 retrivedArticles = RetrieveArticles(data)
 
+                //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
+                totalPages = Math.ceil(retrivedArticles.results.length / 30);
+
+                DisplayRetrivedArtc(retrivedArticles)
+
             })
 
             //sorting by date from newest to oldest
             dateSortMenu.addEventListener("input", () => {
                 retrivedArticles = RetrieveArticles(data)
+
+                //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
+                totalPages = Math.ceil(retrivedArticles.results.length / 30);
+
+                DisplayRetrivedArtc(retrivedArticles)
+
             })
 
             //filtering by article source
             sourceSortMenu.addEventListener("input", () => {
+                
                 retrivedArticles = RetrieveArticles(data)
+                //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
+                totalPages = Math.ceil(retrivedArticles.results.length / 30);
+
+                DisplayRetrivedArtc(retrivedArticles)
+
+            })
+
+            //reset sorting and filter dropdowns
+            resetSortBttn.addEventListener("click", () => {
+
+                titleSortMenu.selectedIndex = 0;
+                dateSortMenu.selectedIndex = 0;
+                sourceSortMenu.selectedIndex = 0;
+
+                retrivedArticles = RetrieveArticles(data);
+
+                //calculating total amount of pages according to dataset object length and number of cards to be shown per page 
+                totalPages = Math.ceil(retrivedArticles.results.length / 30);
+
+                DisplayRetrivedArtc(retrivedArticles)
+
             })
 
 
@@ -123,11 +156,4 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-//reset sorting and filter dropdowns
-resetSortBttn.addEventListener("click", () => {
 
-    titleSortMenu.selectedIndex = 0;
-    dateSortMenu.selectedIndex = 0;
-    sourceSortMenu.selectedIndex = 0;
-
-})
