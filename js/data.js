@@ -1,5 +1,4 @@
 //functions for fetching data
-
 async function fetchJSONData() {
     let filePath = './assets/data/data.json';
     return fetch(filePath)
@@ -13,7 +12,7 @@ async function fetchJSONData() {
         .then((data) => { return data })
         .catch(error => {
             console.error('Failed to fetch data:', error);
-            return null;  // Return null if there’s an errore
+            return null;  // Return null if there’s an error
         });
 }
 
@@ -67,11 +66,7 @@ function RetrieveArticles(data) {
 
     return articles
 
-
 }
-
-
-
 
 
 export { fetchJSONData, RetrieveArticles };
